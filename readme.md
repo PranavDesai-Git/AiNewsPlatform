@@ -1,3 +1,10 @@
+<div align="center">
+  <img src="https://ibb.co/NgF9Ctn0" width="100" />
+  <h1>📰 NewsFlow</h1>
+  <p><i>Summarizing the world, one article at a time.</i></p>
+</div>
+
+
 # Project Idea
 
 * Fetches news from RSS/Google
