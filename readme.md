@@ -10,6 +10,10 @@
 * Frontend is in HTML/CSS/JS
 * Backend written in Python Django
 
+
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![Django](https://img.shields.io/badge/django-%23092e20.svg?style=for-the-badge&logo=django&logoColor=white)
+![Ollama](https://img.shields.io/badge/Ollama-LLM-blue?style=for-the-badge)
 ---
 
 ### Modules Split
