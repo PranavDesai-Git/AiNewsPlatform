@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://ibb.co/NgF9Ctn0" width="100" />
+  <img src="https://i.ibb.co/XfW7Ljkn/Olla-News.png" width = "100" />
   <h1>📰 OllaNews</h1>
   <p><i>News without bs</i></p>
 </div>
