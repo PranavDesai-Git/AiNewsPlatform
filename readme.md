@@ -1,46 +1,49 @@
 <div align="center">
-  <img src="https://i.ibb.co/zTF2kXVj/Olla-News-1-removebg-preview.png" width = "200" />
-  <p><i>News without bs</i></p>
+  <img src="https://i.ibb.co/zTF2kXVj/Olla-News-1-removebg-preview.png" width="200" />
+  <h1>OllaNews</h1>
+  <p><i>"News without the BS"</i></p>
+
+  ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+  ![Django](https://img.shields.io/badge/django-%23092e20.svg?style=for-the-badge&logo=django&logoColor=white)
+  ![Ollama](https://img.shields.io/badge/Ollama-LLM-blue?style=for-the-badge)
 </div>
 
-
-# Project Idea
-
-* Fetches news from RSS/Google
-* Sanitizes the news
-* Turns it into a plain text file
-* Text file is sent to Ollama
-* Ollama summarizes the thing
-* Writes a file called 'summary'
-* We use a HTTP POST to send it to the frontend
-* Frontend is in HTML/CSS/JS
-* Backend written in Python Django
-
-
-![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
-![Django](https://img.shields.io/badge/django-%23092e20.svg?style=for-the-badge&logo=django&logoColor=white)
-![Ollama](https://img.shields.io/badge/Ollama-LLM-blue?style=for-the-badge)
 ---
 
-### Modules Split
+## 🚀 Overview
+OllaNews is a streamlined news aggregator that strips away the clutter. It fetches the latest updates, sanitizes the content into plain text, and uses a local **Ollama 3B** model to provide concise summaries.
 
-#### HTML Frontend [Sadiyah]
-* **Landing page:** A page with a textbox in the middle and a button saying "go" kinda like google homepage. In the textbox the user can type the topic of news.
-* **News list page:** Once the user hits go it gives you top 10 news regarding that in the past few days (this is a dynamic page, it will receive a JSON file with a bunch of news articles). There is also a button that says "summarize" which will do a HTTP request to the backend and will retrieve a JSON file with the summary. The summary should be displayed on top of the news feed.
-* **News read page:** The user can also click on a specific news article and when they click that it sends a HTTP request which retrieves the news article in plain text with everything stripped down. There is also a summarize button here.
-
-#### Python Backend [Pranav]
-* Fetch data using some library
-* Sanitize it
-* Send it to a local LLM probably Ollama 3B model
-* Write a HTTP server to respond to frontend (Django)
+### 🛠️ How it Works
+```mermaid
+flowchart TD
+    D[User requests summary] --> A[RSS News]
+    A -->|fetched| B(Converted into text)
+    B --> C(Summarized by Ollama)
+    C --> U(Sent to the user)
+    U --> D
+```
 
 ---
 
-### Timeline
+## 📦 Modules Split
 
-* **Deadline:** 29th March
-* **Today:** 25th
+### 🎨 HTML Frontend [Sadiyah]
+* **Landing Page:** Minimalist search interface to input news topics.
+* **News List Page:** Dynamic feed of top 10 articles. Includes a **"Summarize"** button that fetches and displays AI summaries via JSON.
+* **News Read Page:** Clutter-free reading mode with an integrated summarization trigger.
+
+### ⚙️ Python Backend [Pranav]
+* **Data Engine:** Automated fetching and sanitization of RSS/Google News feeds.
+* **AI Integration:** Local pipeline to send plain text data to **Ollama (3B model)**.
+* **API:** Django-powered HTTP server to handle all frontend requests.
+
+---
+
+## 📅 Timeline
+
+> [!IMPORTANT]
+> **Hard Deadline:** 29th March 
+> **Status:** Active Development (Started 25th March)
 
 #### 25th & 26th
 - [ ] Landing page
@@ -54,4 +57,5 @@
 - [ ] News read page
 
 #### 28th
-- [ ] Polish/buffer
+- [ ] Polish / Buffer / Bug fixes
+```
