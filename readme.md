@@ -1,6 +1,5 @@
 <div align="center">
   <img src="https://i.ibb.co/zTF2kXVj/Olla-News-1-removebg-preview.png" width = "200" />
-  <h1>📰 OllaNews</h1>
   <p><i>News without bs</i></p>
 </div>
 
