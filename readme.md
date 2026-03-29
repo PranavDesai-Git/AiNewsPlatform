@@ -13,11 +13,19 @@
 ## Overview
 Ollanews is a news reader that allows you to search for topics of news, fetch articles by strippping away all the ads and also provide an ai summary for the artilces
 
-### ️ How it Works
+---
+##  Features
+- RSS Aggregation: Fetches real-time news via Google News & more.
+- Ad-Free Reading: Uses BeautifulSoup to strip scripts and ads, leaving only the content.
+- AI Summarization: Powered by Ollama (Llama 3B) for local, private summaries.
+- Async UI: Fast, AJAX-based summaries without page refreshes.
+
+---
+
+### How it Works
 ```mermaid
 flowchart TD
-    D[User requests summary] --> A[RSS News]
-    A -->|fetched| B(Converted into text)
+    D[User requests summary] --> A[RSS News] A -->|fetched| B(Converted into text)
     B --> C(Summarized by Ollama)
     C --> U(Sent to the user)
     U --> D
@@ -34,3 +42,26 @@ Backend
 - HTML Sanitizer: A cleaning script using BeautifulSoup to strip all <script>, <style>, and <div> tags, leaving only raw <p> tag content to reduce the token count for the LLM.
 - Ollama API Client: A local HTTP request handler that sends the sanitized text to the Ollama server (running Llama 3B) using a specific system prompt to enforce a concise summary format.
 - Django Controller: The central views.py logic that coordinates the flow: receiving the search query, calling the aggregator, passing text to the AI client, and returning a JSON response to the frontend.
+---
+
+### Project structure
+``` bash
+OllaNews/
+├── core/                  # Project configuration and routing
+├── news/                  # Main application module
+│   ├── services/          # Core logic (Aggregator, Sanitizer, Ollama Client)
+│   ├── static/            # CSS and AJAX-based JavaScript
+│   ├── templates/         # Django HTML templates
+│   ├── models.py          # Database schema for articles
+│   ├── urls.py            # App-specific API and View routes
+│   └── views.py           # Controller logic
+├── manage.py              # Django CLI
+└── requirements.txt       # Dependencies (django, feedparser, beautifulsoup4, requests)
+```
+---
+### Installation
+1. Clone the repo: `git clone ...`
+2. Install dependencies: `pip install -r requirements.txt`
+3. Setup Ollama: Ensure Ollama is running and pull the model: `ollama pull llama3:3b`
+4. Run Server: `python manage.py runserver`
+
