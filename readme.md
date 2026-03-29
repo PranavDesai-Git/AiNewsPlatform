@@ -11,7 +11,7 @@
 ---
 
 ## Overview
-OllaNews is a streamlined news aggregator that strips away the clutter. It fetches the latest updates, sanitizes the content into plain text, and uses a local **Ollama 3B** model to provide concise summaries.
+Ollanews is a news reader that allows you to search for topics of news, fetch articles by strippping away all the ads and also provide an ai summary for the artilces
 
 ### ️ How it Works
 ```mermaid
@@ -24,38 +24,13 @@ flowchart TD
 ```
 
 ---
-
-##  Modules Split
-
-### HTML Frontend [Sadiyah]
-* **Landing Page:** Minimalist search interface to input news topics.
-* **News List Page:** Dynamic feed of top 10 articles. Includes a **"Summarize"** button that fetches and displays AI summaries via JSON.
-* **News Read Page:** Clutter-free reading mode with an integrated summarization trigger.
-
-###  Python Backend [Pranav]
-* **Data Engine:** Automated fetching and sanitization of RSS/Google News feeds.
-* **AI Integration:** Local pipeline to send plain text data to **Ollama (3B model)**.
-* **API:** Django-powered HTTP server to handle all frontend requests.
-
----
-
-## Timeline
-
-> [!IMPORTANT]
-> **Hard Deadline:** 29th March 
-> **Status:** Active Development (Started 25th March)
-
-#### 25th & 26th
-- [ ] Landing page
-- [ ] Fetching module
-- [ ] Sanitization module
-
-#### 26th & 27th
-- [ ] Ollama setup
-- [ ] HTTP server with Django
-- [ ] News list page
-- [ ] News read page
-
-#### 28th
-- [ ] Polish / Buffer / Bug fixes
-```
+### Modules Developed
+#### Frontend
+- Landing Page: Simple search bar interface built with Django templates and CSS. It captures user-defined news topics and sends them to the backend via a GET request.
+- Article List View: A feed displaying the title, source, and publication date of the top 10 articles retrieved from the RSS engine. Each entry includes a button to trigger the summarization process.
+- Summary Display: An asynchronous UI component that uses JavaScript (Fetch API) to request and display the 3B model's output without reloading the entire page.
+Backend
+- RSS Aggregator: A Python module using feedparser to connect to Google News and other RSS XML endpoints. It filters results based on the user's search query.
+- HTML Sanitizer: A cleaning script using BeautifulSoup to strip all <script>, <style>, and <div> tags, leaving only raw <p> tag content to reduce the token count for the LLM.
+- Ollama API Client: A local HTTP request handler that sends the sanitized text to the Ollama server (running Llama 3B) using a specific system prompt to enforce a concise summary format.
+- Django Controller: The central views.py logic that coordinates the flow: receiving the search query, calling the aggregator, passing text to the AI client, and returning a JSON response to the frontend.
