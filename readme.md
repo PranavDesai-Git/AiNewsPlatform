@@ -1,10 +1,14 @@
-\<div align="center"\>
-\<img src="[https://i.ibb.co/zTF2kXVj/Olla-News-1-removebg-preview.png](https://i.ibb.co/zTF2kXVj/Olla-News-1-removebg-preview.png)" width="200" /\>
-\<h1\>OllaNews\</h1\>
-\<p\>\<i\>"News without the BS"\</i\>\</p\>
+<div align="center"\>
+<img src="[https://i.ibb.co/zTF2kXVj/Olla-News-1-removebg-preview.png](https://i.ibb.co/zTF2kXVj/Olla-News-1-removebg-preview.png)" width="200" /\>
+<h1\>OllaNews\</h1\>
+<p\>\<i\>"News without the BS"\</i\>\</p\>
 
-\</div\>
+</div\>
 
+  ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+  ![Django](https://img.shields.io/badge/django-%23092e20.svg?style=for-the-badge&logo=django&logoColor=white)
+  ![Ollama](https://img.shields.io/badge/Ollama-LLM-blue?style=for-the-badge)
+</div>
 -----
 
 ## Overview
