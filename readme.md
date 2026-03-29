@@ -25,7 +25,8 @@ Ollanews is a news reader that allows you to search for topics of news, fetch ar
 ### How it Works
 ```mermaid
 flowchart TD
-    D[User requests summary] --> A[RSS News] A -->|fetched| B(Converted into text)
+    D[User requests summary] --> A[RSS News] 
+    A -->|fetched| B(Converted into text)
     B --> C(Summarized by Ollama)
     C --> U(Sent to the user)
     U --> D
